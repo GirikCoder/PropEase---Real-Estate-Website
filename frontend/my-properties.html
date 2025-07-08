@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Properties - PropEase</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <span class="logo-icon">🏠</span>
+      <span class="logo-text">PropEase</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="properties.html">All Properties</a></li>
+      <li class="nav-auth" style="display:none;"><a href="my-properties.html" class="active">My Properties</a></li>
+      <li class="nav-auth" style="display:none;"><a href="my-enquiries.html">My Enquiries</a></li>
+    </ul>
+    <div class="auth-buttons">
+      <a href="login.html" class="btn-outline">Login</a>
+      <a href="signup.html" class="btn-primary">Sign Up</a>
+    </div>
+  </nav>
+  <section class="hero">
+    <h1>My Properties</h1>
+    <p>List of properties you have registered on PropEase</p>
+    <div id="property-form-container"></div>
+    <div class="property-grid">
+      <!-- User's property cards will be injected here by JS -->
+    </div>
+  </section>
+  <script src="main.js"></script>
+  <script src="modal.js"></script>
+  <script src="my-properties.js"></script>
+</body>
+</html> 

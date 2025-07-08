@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - PropEase</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <span class="logo-icon">🏠</span>
+      <span class="logo-text">PropEase</span>
+    </div>
+  </nav>
+  <main class="auth-container center-auth">
+    <form class="auth-form card-form" id="loginForm">
+      <div class="auth-header">
+        <div class="auth-subheading">Please enter your details</div>
+        <h2>Welcome back</h2>
+      </div>
+      <input type="email" name="email" placeholder="Email address" class="input-modern" required>
+      <input type="password" name="password" placeholder="Password" class="input-modern" required>
+      <div class="auth-row">
+        <label class="remember-label"><input type="checkbox" name="remember"> Remember for 30 days</label>
+      </div>
+      <button type="submit" class="btn-primary btn-block">Login</button>
+      <div class="auth-footer">
+        Don't have an account? <a href="signup.html">Sign Up</a>
+      </div>
+    </form>
+  </main>
+  <script src="auth.js"></script>
+</body>
+</html> 
