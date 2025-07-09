@@ -1,4 +1,4 @@
-const backendUrl = 'https://your-backend-url.com/api'; // Change to your backend URL
+const backendUrl = 'http://localhost:5000/api';
 
 document.addEventListener('DOMContentLoaded', () => {
   const token = localStorage.getItem('token');

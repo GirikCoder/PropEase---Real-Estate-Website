@@ -1,28 +1,16 @@
-// Sample property data
-const properties = [
-  {
-    id: 1,
-    title: 'Modern Family Home',
-    location: 'Los Angeles, CA',
-    price: '$1,200,000',
-    image: 'https://images.unsplash.com/photo-1560184897-6a8c1b1b1c8b?auto=format&fit=crop&w=800&q=80',
-    description: 'A beautiful modern home in the heart of LA.',
-    area: '2,500 sq ft',
-    rooms: '4 bedrooms, 3 bathrooms'
-  },
-  {
-    id: 2,
-    title: 'Cozy Suburban House',
-    location: 'Austin, TX',
-    price: '$850,000',
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
-    description: 'A cozy house perfect for families.',
-    area: '1,800 sq ft',
-    rooms: '3 bedrooms, 2 bathrooms'
-  }
-];
+const backendUrl = 'https://your-backend-url.com/api'; // CHANGE THIS to your backend API URL
 
-function renderProperties() {
+async function fetchProperties() {
+  try {
+    const res = await fetch(`${backendUrl}/properties`);
+    const properties = await res.json();
+    renderProperties(properties);
+  } catch (err) {
+    renderProperties([]);
+  }
+}
+
+function renderProperties(properties = []) {
   const grid = document.querySelector('.property-grid');
   grid.innerHTML = '';
   properties.forEach(property => {
@@ -37,7 +25,7 @@ function renderProperties() {
         <div class="card-area">Area: ${property.area || '-'} | Rooms: ${property.rooms || '-'}</div>
       </div>
     `;
-    card.addEventListener('click', () => openPropertyModal(property));
+    card.onclick = () => window.createModal(property);
     grid.appendChild(card);
   });
 }
@@ -73,5 +61,5 @@ function updateNavbarAuth() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', renderProperties);
+document.addEventListener('DOMContentLoaded', fetchProperties);
 document.addEventListener('DOMContentLoaded', updateNavbarAuth); 
